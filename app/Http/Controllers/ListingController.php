@@ -40,4 +40,30 @@ class ListingController extends Controller
 
         return redirect('/')->with ('message','Listing created successfully!');
     }
+    //Show Edit Form
+    public function edit(Listing $listing){
+        return view('listings.edit',['listing'=>$listing]);
+    }
+
+    //Update Listing Data
+    public function update(Request $request, Listing $listing){
+        $formFields = $request->validate([
+            'title'=>'required',
+            'gym'=>'required',
+            'location' => 'required',
+            'email' => ['required', 'email'],
+            'tags' => 'required',
+            'description' => 'required'
+        ]);
+
+        $listing->update($formFields);
+
+        return back()->with ('message','Listing updated successfully!');
+    }
+
+    //Delete Listing
+    public function destroy(Listing $listing){
+        $listing->delete();
+        return redirect('/')->with('message','Listing deleted successfully');
+    }
 }
