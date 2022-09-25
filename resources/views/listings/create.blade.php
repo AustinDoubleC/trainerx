@@ -20,6 +20,7 @@
               type="text"
               class="border border-gray-200 rounded p-2 w-full"
               name="gym"
+              value="{{old('gym')}}"
           />
           @error('gym')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -34,6 +35,7 @@
               type="text"
               class="border border-gray-200 rounded p-2 w-full"
               name="title"
+              value="{{old('title')}}"
               placeholder="Example: Yoga trainer"
           />
           @error('title')
@@ -51,6 +53,7 @@
               type="text"
               class="border border-gray-200 rounded p-2 w-full"
               name="location"
+              value="{{old('location')}}"
           />
           @error('location')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -65,6 +68,7 @@
               type="text"
               class="border border-gray-200 rounded p-2 w-full"
               name="email"
+              value="{{old('email')}}"
           />
           @error('email')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -79,6 +83,7 @@
               type="text"
               class="border border-gray-200 rounded p-2 w-full"
               name="tags"
+              value="{{old('tags')}}"
           />
           @error('tags')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
@@ -107,7 +112,7 @@
               class="border border-gray-200 rounded p-2 w-full"
               name="description"
               rows="10"
-          ></textarea>
+          >{{old('description')}}</textarea>
           @error('description')
           <p class="text-red-500 text-xs mt-1">{{$message}}</p>
           @enderror
